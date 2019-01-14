@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5 {
 
 
 html, header, body, nav, h1, h3, p, div, section, address, footer {
-	border: 1px dashed red;
+	/* border: 1px dashed red; */
 }
 
 .pagewrapper {
@@ -86,32 +86,29 @@ html, header, body, nav, h1, h3, p, div, section, address, footer {
     padding: 2%;
     margin: 0 auto;
     /* debug color */
-    color: blue;
+    /* color: blue; */
   }
 }
 
 @media screen and (max-width: 500px) {
   .pagewrapper {
     width: 100%;
-    padding: 1%;
-    margin: 0 auto;
+    padding: 1% 0;
     /* debug color */
-    color: red;
+    /* color: red; */
   }
 }
 
 nav {
 	width: 100%;
   display: flex;
+  flex-flow: row wrap;
 	justify-content: space-between;
 	align-items: center;
-	margin: 5px auto;
-	padding: 0 0 0 25px;
 }
 
 nav a {
-	width: 12%;
-	padding: 5px;
+	padding: 10px;
 	text-decoration: none;
 	color: lightgrey;
 	/* margin: 0 auto; */
@@ -123,11 +120,35 @@ nav a:hover {
 }
 
 .logo {
-	width: 30%;
 	/* margin: 0px auto 10px; */
 	object-fit: scale-down;
-	padding: 5px 5px 20px;
+	padding: 5px 5px;
 }
+
+@media screen and (max-width: 800px) {
+  .logo {
+    width: 100%;
+    order: -5;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  nav {
+    flex-flow: column;
+    align-items: space-between;
+  }
+  nav a, .logo {
+    border-bottom: 1px solid black;
+    width: 100%;
+  }
+  nav a {
+    font-size: larger;
+  }
+  .logo {
+    order: -5;
+  }
+}
+
 
 section {
 	width: 100%;
@@ -173,10 +194,41 @@ h1 {
 	padding: 10px;
 }
 
+@media screen and (max-width: 800px) {
+  header {
+    margin-top: 50px;
+  }
+  .headerimage {
+    display: none;
+  }
+  .lefttopheader {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  header {
+    margin-top: 25px;
+  }
+  nav {
+    flex-flow: column;
+    align-items: space-between;
+  }
+  nav a, .logo {
+    border-bottom: 1px solid black;
+    width: 100%;
+  }
+  nav a {
+    font-size: larger;
+  }
+  .logo {
+    order: -5;
+  }
+}
+
 section.first-in-line {
 	border-top: 1px solid black;
 	margin: 50px 0 20px;
-	width: 100%;
 	justify-content: space-between;
 }
 
@@ -205,6 +257,15 @@ section.second-in-line {
 	display: inline-block;
 	width: 33%;
 	padding: 2px 5px;
+}
+
+@media screen and (max-width: 500px) {
+  section {
+    flex-flow: row wrap;
+  }
+  .first-in-line div, .second-in-line div {
+  width: 100%;
+  padding: 10px;
 }
 
 address {
