@@ -71,14 +71,33 @@ h1, h2, h3, h4, h5 {
 
 
 html, header, body, nav, h1, h3, p, div, section, address, footer {
-	/* border: 1px dashed red; */
+	border: 1px dashed red;
 }
 
 .pagewrapper {
+  padding: 2% 5%;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 10px;
-  width: 767px;
-  box-sizing: border-box;
+}
+
+@media screen and (max-width: 800px) {
+  .pagewrapper {
+    width: 100%;
+    padding: 2%;
+    margin: 0 auto;
+    /* debug color */
+    color: blue;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .pagewrapper {
+    width: 100%;
+    padding: 1%;
+    margin: 0 auto;
+    /* debug color */
+    color: red;
+  }
 }
 
 nav {
@@ -86,13 +105,13 @@ nav {
   display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 25px 0 10px;
+	margin: 5px auto;
 	padding: 0 0 0 25px;
 }
 
 nav a {
 	width: 12%;
-	padding: 5px 5px 30px;
+	padding: 5px;
 	text-decoration: none;
 	color: lightgrey;
 	/* margin: 0 auto; */
@@ -118,12 +137,12 @@ section {
 header {
 	width: 100%;
 	display: flex;
-	margin: 10px 0 10px;
 	justify-content: space-between;
 	align-items: center;
 }
 
 h1 {
+  max-width: 500px;
 	font-size: 75px;
 	text-align: center;
 	margin: 5px auto 15px;
@@ -131,11 +150,10 @@ h1 {
 }
 
 .lefttopheader {
-	width: 55%;
+	width: 50%;
 	display: block;
-	margin: 0 auto;
-	/* justify-content: center;
-	flex-wrap: wrap;
+	justify-content: center;
+	/* flex-wrap: wrap;
 	align-items: center; */
 }
 
@@ -152,7 +170,7 @@ h1 {
 .headerimage {
 	width: 50%;
 	object-fit: contain;
-	padding: 10px 55px 10px 10px;
+	padding: 10px;
 }
 
 section.first-in-line {
@@ -171,7 +189,7 @@ section.first-in-line {
 
 .middle-img {
 	width: 100%;
-	margin: 10px 0 20px;
+	padding: 10px;
 	display: block;
 	object-fit: contain;
 }
