@@ -156,7 +156,7 @@ section {
 	display: flex;
 }
 
-header .flexheader {
+.flexheader {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -174,7 +174,7 @@ h1 {
 .lefttopheader {
 	width: 50%;
 	display: block;
-	justify-content: center;
+	/* justify-content: center; */
 	/* flex-wrap: wrap;
 	align-items: center; */
 }
